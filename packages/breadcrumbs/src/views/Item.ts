@@ -16,7 +16,7 @@ const COMPONENT_ID = 'breadcrumbs.item';
 /**
  * Accepts all `<li>` props
  */
-const Item = styled.li.attrs(props => ({
+const Item = styled.li.attrs((props: any) => ({
   'data-garden-id': COMPONENT_ID,
   'data-garden-version': PACKAGE_VERSION,
   className: classNames(BreadcrumbStyles['c-breadcrumb__item'], {
@@ -25,11 +25,11 @@ const Item = styled.li.attrs(props => ({
   })
 }))`
   ${props => retrieveComponentStyles(COMPONENT_ID, props)};
-`;
+` as React.FC<any>;
 
-Item.propTypes = { current: PropTypes.bool };
+Item.propTypes = { current: PropTypes.bool } as any;
 
-Item.hasType = () => Item;
+(Item as any).hasType = () => Item;
 
 /** @component */
 export default Item;
