@@ -34,6 +34,31 @@ should be re-checked for ID naming accuracy.
 - `ButtonGroup` now requires it's children to contain a `value` prop which is returned when selected
 - removed `min-width` CSS per design intent
 
+## @zendeskgarden/react-chrome
+
+- No longer packages a `styles.css` dist; CSS is self-contained
+- All irrelevant state and layout styling props (focused, hovered, etc.) have been removed
+- Prop renames:
+  - `Header`
+    - `standalone` -> `isStandalone`
+  - `HeaderItem`
+    - `isRound` -> `isRound`
+    - `logo` -> `isLogo`
+  - `HeaderItemText`
+    - `clipped` -> `isClipped`
+  - `Nav`
+    - `expanded` -> `isExpanded`
+    - `dark` -> `isDark`
+    - `light` -> `isLight`
+  - `NavItem`
+    - `logo` -> `isLogo`
+    - `brandmark` -> `isBrandmark`
+    - `current` -> `isCurrent`
+  - `CollapsibleSubNavItem`
+    - `expanded` -> `isExpanded`
+  - `SubNavItem`
+    - `current` -> `isCurrent`
+
 ## @zendeskgarden/react-datepickers
 
 - `Datepicker` and `DatepickerRange` `small` prop is renamed to `isCompact`
@@ -56,7 +81,8 @@ should be re-checked for ID naming accuracy.
   - removed `small` prop; all field layouts respond to `isCompact` placed on the input component
 - Label
   - `regular` -> `isRegular`
-  - removed remaining props – attributes should be applied to the corresponding `<input>` component (checked, disabled, indeterminate)
+  - removed remaining props – attributes should be applied to the corresponding
+    `<input>` component (checked, disabled, indeterminate)
 
 ## @zendeskgarden/react-grid
 
