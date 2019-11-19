@@ -56,7 +56,8 @@ should be re-checked for ID naming accuracy.
   - removed `small` prop; all field layouts respond to `isCompact` placed on the input component
 - Label
   - `regular` -> `isRegular`
-  - removed remaining props – attributes should be applied to the corresponding `<input>` component (checked, disabled, indeterminate)
+  - removed remaining props – attributes should be applied to the corresponding `<input>`
+  component (checked, disabled, indeterminate)
 
 ## @zendeskgarden/react-grid
 
@@ -73,7 +74,7 @@ should be re-checked for ID naming accuracy.
   - Use `duration` instead which accepts `ms` defaults to 1250ms
 - `<Skeleton />` loader has renamed `dark` prop to `isDark`
 
-## @zendesk/react-tabs
+## @zendeskgarden/react-tabs
 
 - no longer packages a `styles.css` dist; CSS is self-contained
 - new required structure for `Tabs` component
@@ -91,7 +92,25 @@ should be re-checked for ID naming accuracy.
 - All styling props have been removed
   - `hovered`, `active`, `focused`, and `selected`
 
-## @zendesk/react-tags
+## @zendeskgarden/react-tables
+
+- no longer packages a `styles.css` dist; CSS is self-contained
+- The `<Table>` component is now based on a `table` display rather than `flexbox`
+- Prop renaming
+  - `Cell`, `HeaderCell`
+    - `minimum` -> `isMinimum`
+    - `truncate` -> `isTruncated`
+    - `menu` -> `hasOverflow`
+  - `OverflowButton`
+  - `Row`
+    - `striped` -> `isStriped`
+    - `selected` -> `isSelected`
+  - `SortableCell`
+    - `active` -> `isActive`
+    - `minimum` -> `isMinimum`
+    - `truncated` -> `isTruncated`
+
+## @zendeskgarden/react-tags
 
 - no longer packages a `styles.css` dist; CSS is self-contained
 - removed child component exports

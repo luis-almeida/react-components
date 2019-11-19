@@ -18,6 +18,7 @@
     "build:demo": "../../utils/scripts/build-demo.sh",
     "start": "../../utils/scripts/start.sh"
   },
+  "types": "dist/typings/index.d.ts",
   "dependencies": {
     "@zendeskgarden/container-utilities": "^0.3.0",
     "classnames": "^2.2.5",
@@ -49,5 +50,5 @@
   },
   "zendeskgarden:library": "GardenTables",
   "zendeskgarden:max_size": "10 kB",
-  "zendeskgarden:src": "src/index.js"
+  "zendeskgarden:src": "src/index.ts"
 }
