@@ -22,7 +22,7 @@ export const Breadcrumb = React.forwardRef<HTMLElement, HTMLAttributes<HTMLEleme
       if (isLastItem) {
         return (
           <StyledBreadcrumbItem isCurrent>
-            {cloneElement(child as any, getCurrentPageProps())}
+            {cloneElement(child as any, { ...getCurrentPageProps(), ...(child as any).props })}
           </StyledBreadcrumbItem>
         );
       }
