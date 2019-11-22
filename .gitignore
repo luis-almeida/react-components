@@ -6,7 +6,7 @@ node_modules
 .netlify
 
 # Package specific
-packages/**/dist
+
 packages/**/yarn.lock
 package-lock.json
 
