@@ -33,48 +33,52 @@ const StyledSpacedField = styled(Field)`
   margin-bottom: ${props => props.theme.space.sm};
 `;
 
-<Grid>
-  <Row>
-    <Col md={4}>
-      <Well recessed>
-        <StyledSpacedField>
-          <Toggle
-            checked={state.isVertical}
-            onChange={e => setState({ isVertical: e.target.checked })}
+<State initialState={initialState}>
+  {(state, setState) => (
+    <Grid>
+      <Row>
+        <Col md={4}>
+          <Well recessed>
+            <StyledSpacedField>
+              <Toggle
+                checked={state.isVertical}
+                onChange={e => setState({ isVertical: e.target.checked })}
+              >
+                <Label>Vertical</Label>
+              </Toggle>
+            </StyledSpacedField>
+            <StyledSpacedField>
+              <Toggle
+                checked={state.isDisabled}
+                onChange={e => setState({ isDisabled: e.target.checked })}
+              >
+                <Label>Disabled</Label>
+              </Toggle>
+            </StyledSpacedField>
+          </Well>
+        </Col>
+        <Col md={8}>
+          <Tabs
+            isVertical={state.isVertical}
+            selectedItem={state.selectedItem}
+            onChange={selectedItem => setState({ selectedItem })}
           >
-            <Label>Vertical</Label>
-          </Toggle>
-        </StyledSpacedField>
-        <StyledSpacedField>
-          <Toggle
-            checked={state.isDisabled}
-            onChange={e => setState({ isDisabled: e.target.checked })}
-          >
-            <Label>Disabled</Label>
-          </Toggle>
-        </StyledSpacedField>
-      </Well>
-    </Col>
-    <Col md={8}>
-      <Tabs
-        isVertical={state.isVertical}
-        selectedItem={state.selectedItem}
-        onChange={selectedItem => setState({ selectedItem })}
-      >
-        <TabList>
-          {tabs.map(tab => (
-            <Tab key={tab} item={tab} disabled={state.isDisabled && tab === 'Tab 2'}>
-              {tab}
-            </Tab>
-          ))}
-        </TabList>
-        {tabs.map(tab => (
-          <TabPanel key={tab} item={tab}>
-            {tab} content
-          </TabPanel>
-        ))}
-      </Tabs>
-    </Col>
-  </Row>
-</Grid>;
+            <TabList>
+              {tabs.map(tab => (
+                <Tab key={tab} item={tab} disabled={state.isDisabled && tab === 'Tab 2'}>
+                  {tab}
+                </Tab>
+              ))}
+            </TabList>
+            {tabs.map(tab => (
+              <TabPanel key={tab} item={tab}>
+                {tab} content
+              </TabPanel>
+            ))}
+          </Tabs>
+        </Col>
+      </Row>
+    </Grid>
+  )}
+</State>;
 ```
